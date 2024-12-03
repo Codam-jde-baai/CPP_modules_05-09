@@ -6,7 +6,7 @@ Overall these exercises focused on templates, type-casting, containers and simpl
 
 ## The Modules
 
-Below is a brief overview of each module and the key concepts they cover. These exercises emphasize good coding practices and advanced C++ features.
+Below is a brief overview of each module and the key concepts they cover. These exercises were sometimes relatively simple and sometimes more complex like Modules09. After I finished all of these I had a good base to write bigger projects like webserv in C++.
 
 ### Module05
 
