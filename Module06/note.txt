@@ -1,0 +1,78 @@
+4 types of casting in CPP
+
+0. implicit
+1. Dynamic
+2. Static
+3. const 
+4. reinteroet cast
+
+reinterpet cast should only be used to a pointer back to its orignal data type
+
+const cast should be used to remove the costness of variables
+
+Dynamic cast in CPP is used for performing safe downcasting and cross-casting of pointers and references in the inheritance hierarchy.
+
+Static cast is used for implicit conversions between related types, such as converting from a pointer to a base class to a pointer to a derived class.
+{
+float floatNumber = 3.14;
+int intNumber = static_cast<int>(floatNumber);
+}
+
+
+
+implicit cast is simply assigning a data types
+{
+	int a = 0;
+	float b = 3.5;
+	a = b;
+	//a is now 3
+}
+
+explicit cast is the same as implicit but now you can chose where it happens and the compiler checksif its possible at allowing
+{
+	int a = 0;
+	float b = 3.5;
+	a = (int)b;
+	//a is now 3
+}
+
+
+
+The important difference between explicit cast and static_cast in C++ is:
+Safety and compile-time checks:
+Explicit cast (C-style cast):
+Less safe, as it can perform potentially unsafe conversions without compile-time checks.
+Can silently perform multiple conversions, including reinterpret_cast and const_cast.
+static_cast:
+Safer, as it performs compile-time type checking.
+Only performs conversions between related types that are known to be safe.
+Will not remove const-ness or perform dangerous pointer conversions.
+2. Readability and intent:
+static_cast clearly expresses the programmer's intent to perform a specific type of conversion.
+Explicit cast is less clear about the exact type of conversion being performed.
+Flexibility:
+Explicit cast can perform multiple conversions in one step, which can be both an advantage and a potential source of hidden errors.
+static_cast is more restrictive and only performs one specific type of conversion.
+In general, static_cast is preferred in modern C++ due to its increased safety and clarity. It helps catch potential errors at compile-time and makes the code's intent more explicit.
+
+
+
+In C++, using input[0] to access the first character of a string is valid and commonly used, especially when working with C-style strings or when you're certain the string is not empty. However, for std::string objects, there are some considerations:
+It's valid: input[0] works fine for std::string objects in C++.
+Safety: It doesn't perform bounds checking. If the string is empty, this could lead to undefined behavior.
+C++ alternatives: For std::string, you might also see:
+input.at(0): Provides bounds checking (throws std::out_of_range if invalid).
+input.front(): Returns a reference to the first character (C++11 onwards).
+For this specific case, since you've already checked that input.size() == 1, using input[0] is safe and perfectly acceptable. It's concise and clear.
+If you want to make it more "C++ style", you could use input.front(), but in this context, both are equally good choices.
+
+
+
+
+ex00 uses static cast for converting numbers
+
+ex01 uses reinterpet_cast
+
+
+
+https://www.geeksforgeeks.org/static_cast-in-cpp/

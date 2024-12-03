@@ -1,0 +1,25 @@
+Way:
+
+RPN leads to faster calculations for a couple of reasons. One is that there is less information to store. Therefore, instead of needing to store nine characters for the expression ((5–3) * 2), computers using RPN only need to store five characters with the expression 5 3–2 *. And because there are fewer characters to process, execution becomes faster.
+
+So in a computer using RPN, the evaluation of the expression 5 1–3 * is as follows:
+
+Push 5 into the stack. This is the first value.
+Push 1 into the stack. This is the second value and is on the position above the 5.
+Apply the subtraction operation by taking two operands from the stack (1 and 5). The top value (1) is subtracted from the value below it (5), and the result (4) is stored back to the stack. 4 is now the only value in the stack and is in the bottom.
+Push 3 into the stack. This value is in the position above 4 in the stack.
+Apply the multiplication operation by taking the last two numbers off the stack and multiplying them. The result is then placed back into the stack. After this operation, the stack now only contains the number 12.
+
+
+
+3 5 + 7 2 — *
+
+Reading from left to right, this is interpreted as follows:
+
+Push 3 onto the stack.
+Push 5 onto the stack. Reading from the top, the stack now contains (5, 3).
+Apply the + operation: take the top two numbers off the stack, add them together, and put the result back on the stack. The stack now contains just the number 8.
+Push 7 onto the stack.
+Push 2 onto the stack. It now contains (2, 7, 8).
+Apply the — operation: take the top two numbers off the stack, subtract the top one from the one below, and put the result back on the stack. The stack now contains (5, 8).
+Apply the * operation: take the top two numbers off the stack, multiply them together, and put the result back on the stack. The stack now contains just the number 40.

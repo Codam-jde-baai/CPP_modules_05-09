@@ -1,0 +1,46 @@
+https://www.geeksforgeeks.org/containers-cpp-stl/
+
+https://www.geeksforgeeks.org/c-magicians-stl-algorithms/
+
+
+Types of iterators: Based upon the functionality of the iterators, they can be classified
+into five major categories:
+1. Input Iterators: They are the weakest of all the iterators and have very limited
+functionality. They can only be used in a single-pass algorithms, i.e., those algorithms
+which process the container sequentially such that no element is accessed more than
+once.
+2. Output Iterators: Just like input iterators, they are also very limited in their functionality
+and can only be used in single-pass algorithm, but not for accessing elements, but for
+being assigned elements.
+3. Forward Iterator: They are higher in hierarachy than input and output iterators, and
+contain all the features present in these two iterators. But, as the name suggests, they
+also can only move in forward direction and that too one step at a time.
+3
+4. Bidirectional Iterators: They have all the features of forward iterators along with the fact
+that they overcome the drawback of forward iterators, as they can move in both the
+directions, that is why their name is bidirectional.
+5. Random-Access Iterators: They are the most powerful iterators. They are not limited to
+moving sequentially, as their name suggests, they can randomly access any element
+inside the container. They are the ones whose functionality is same as pointers.
+
+
+int main()
+{
+	// Declaring a vector
+	vector<int> v = { 1, 2, 3 };
+	// Declaring an iterator
+	vector<int>::iterator i;
+
+	cout << "Without iterators = ";
+	// Accessing the elements without using iterators
+	for (int j = 0; j < 3; ++j)
+	{
+		cout << v[j] << " ";
+	}
+	cout << "\nWith iterators = ";
+	// Accessing the elements using iterators
+	for (i = v.begin(); i != v.end(); ++i)
+	{
+		cout << *i << " ";
+	} 
+}

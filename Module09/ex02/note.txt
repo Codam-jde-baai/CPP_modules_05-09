@@ -1,0 +1,23 @@
+Merge inesrtion - Ford Johnson algo
+
+
+Clarified Steps:
+Step 1: Group the integers into pairs.
+Step 2: Sort each pair so that the larger number is in the first position.
+Step 3: Create a sorted list L by performing binary insertion of the larger numbers (the numbers in the first position of each pair).
+Step 4: Insert the smaller numbers (from the second position of each pair) into the appropriate place in the sorted list L (again, using binary insertion).
+
+
+Take aways:
+- On small input lists are significantly faster as they dont need to allocate memory.
+- On bigger inputs vectors are signficantly faster since they can use binary search method instead of iterating through a list one by one.
+
+## generate random input that you cna replicate 
+
+shuf -i 1-100000 -n 3000 | tr "\n" " " > input
+./PmergeMe $(cat input) 
+
+
+or instantly run random input
+
+./PmergeMe `shuf -i 1-100000 -n 3000 | tr "\n" " "`
